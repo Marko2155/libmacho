@@ -9,3 +9,19 @@ an assembly library for coding in Mach-O Assembly.
 | SYSCALL_INPUT  | Maximum amount of letters | None                     | Input string      | None              |
 | SYSCALL_FOPEN  | 0x1B6                     | Filename                 | Flags             | None              |
 | SYSCALL_FCLOSE | None                      | File descriptor          | None              | None              |
+
+# Flags
+| Flag        | Purpose                                                                       |
+|-------------|-------------------------------------------------------------------------------|
+| O_CREAT     | Creates a file if it doesn't exist.                                           |
+| O_RDONLY    | Sets file to read only.                                                       |
+| O_WRONLY    | Sets file to write only.                                                      |
+| O_RDWR      | Sets file to read/write.                                                      |
+| O_TRUNC     | Truncates file to zero length.                                                |
+| O_NOCTTY    | If filename is TTY/terminal, this flag makes sure it isn't the main terminal. |
+| O_DIRECTORY | File is directory.                                                            |
+| O_APPEND    | Appends to file.                                                              |
+| O_NOFOLLOW  | Don't follow symlinks.                                                        |
+| O_CLOEXEC   | Closes automatically after write.                                             |
+| O_EXCL      | When used with O_CREAT, errors if file exists.                                |
+Any others were too hard to explain in simple terms.
