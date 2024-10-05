@@ -25,3 +25,17 @@ an assembly library for coding in Mach-O Assembly.
 | O_CLOEXEC   | Closes automatically after write.                                             |
 | O_EXCL      | When used with O_CREAT, errors if file exists.                                |
 Any others were too hard to explain in simple terms.
+
+# How to:
+## Install
+Simply drag into your dev folder, and add it to the toolchain you're using, example: `nasm -o asmacho main.s` -> `nasm -o asmacho libmacho.s main.s`
+## Use
+Just set up the parameters (in the table above) how you like em, then call them, example program with `SYSCALL_WRITE` writing to STDOUT:
+```
+text db "Hello!"
+mov rdx, 6
+mov rdi, 0x1
+mov rsi, text
+call SYSCALL_WRITE
+call SYSCALL_EXIT
+```
